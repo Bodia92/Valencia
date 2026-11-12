@@ -879,7 +879,7 @@ button {
 .footer {
     background: var(--color-black);
     color: var(--color-white);
-    padding-block: 56px;
+    padding-top: 56px;
 }
 .footer__inner {
     display: grid;
@@ -892,14 +892,14 @@ button {
     min-width: 0;
 }
 .footer__col--brand {
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: flex-start;
 }
 .footer__col--legal {
     justify-content: center;
     gap: 16px;
 }
 .footer__col--contacts {
+    grid-column: 3;
     justify-content: center;
     gap: 16px;
 }
@@ -918,6 +918,11 @@ button {
     font-size: 16px;
     line-height: 1.5;
     opacity: 0.7;
+}
+.footer__bottom {
+    margin-top: 56px;
+    padding-block: 20px;
+    border-top: 1px solid var(--color-line);
 }
 .footer__copy {
     font-family: var(--font-alt);
@@ -994,23 +999,23 @@ button {
     .footer__col--brand {
         grid-column: 1 / -1;
     }
+    .footer__col--contacts {
+        grid-column: auto;
+    }
     .footer__logo {
         max-width: 360px;
     }
 }
 @media (max-width: 767px) {
     .footer {
-        padding-block: 40px;
+        padding-top: 40px;
+    }
+    .footer__bottom {
+        margin-top: 40px;
     }
     .footer__inner {
         grid-template-columns: 1fr;
         gap: 40px;
-    }
-    .footer__col--brand {
-        gap: 24px;
-    }
-    .footer__copy {
-        order: 3;
     }
     .footer__logo {
         max-width: 260px;
