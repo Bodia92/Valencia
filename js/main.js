@@ -10,10 +10,10 @@
     recipient: 'info@platform.events',
     endpoint: 'https://formsubmit.co/ajax/info@platform.events',
     requestTimeout: 15000,
-    languages: ['uk', 'es', 'en'],
-    defaultLang: 'uk',
-    langCodes: { uk: 'UA', es: 'ES', en: 'EN' },
-    storageKey: 'vf-lang'
+    languages: ['es', 'en', 'uk'],
+    defaultLang: 'es',
+    langCodes: { es: 'ES', en: 'EN', uk: 'UA' },
+    storageKey: 'vf-lang-choice'
   };
 
   var dict = window.I18N || {};
@@ -44,12 +44,7 @@
     var saved = safeStorage('get', CONFIG.storageKey);
     if (saved && CONFIG.languages.indexOf(saved) !== -1) return saved;
 
-    var browser = (navigator.languages || [navigator.language || '']);
-    for (var i = 0; i < browser.length; i++) {
-      var code = String(browser[i]).toLowerCase().slice(0, 2);
-      if (code === 'ua') code = 'uk';
-      if (CONFIG.languages.indexOf(code) !== -1) return code;
-    }
+    // Spanish is the primary language; others only on explicit choice
     return CONFIG.defaultLang;
   }
 
@@ -81,8 +76,6 @@
       btn.setAttribute('aria-selected', String(btn.getAttribute('data-lang') === lang));
     });
 
-    safeStorage('set', CONFIG.storageKey, lang);
-
     // re-translate visible validation errors
     if (formApi) formApi.refreshErrors();
   }
@@ -113,6 +106,7 @@
       var btn = e.target.closest('[data-lang]');
       if (!btn) return;
       applyLang(btn.getAttribute('data-lang'));
+      safeStorage('set', CONFIG.storageKey, currentLang);
       close(true);
     });
 
