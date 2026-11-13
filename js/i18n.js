@@ -50,8 +50,7 @@ window.I18N = {
     'validation.email.required': 'Вкажіть електронну пошту',
     'validation.email.invalid': 'Перевірте формат пошти, наприклад name@company.com',
     'validation.message.long': 'Не більше 2000 символів',
-
-    'footer.tagline': 'Гастрономічні фестивалі та новий досвід міського життя',
+    'footer.tagline': 'Фестиваль, музика, їжа та неймовірний досвід.',
     'footer.rights': 'Всі права захищені',
     'footer.info': 'Інформація',
     'footer.legal': 'Правова інформація',
@@ -122,8 +121,7 @@ window.I18N = {
     'validation.email.required': 'Indica tu correo electrónico',
     'validation.email.invalid': 'Revisa el formato, por ejemplo name@company.com',
     'validation.message.long': 'Máximo 2000 caracteres',
-
-    'footer.tagline': 'Festivales gastronómicos y nuevas experiencias de la vida urbana',
+    'footer.tagline': 'Festival, Música, Comida y Experiencias Increíbles.',
     'footer.rights': 'Todos los derechos reservados',
     'footer.info': 'Información',
     'footer.legal': 'Aviso legal',
@@ -194,8 +192,7 @@ window.I18N = {
     'validation.email.required': 'Please enter your email',
     'validation.email.invalid': 'Check the format, e.g. name@company.com',
     'validation.message.long': 'Maximum 2000 characters',
-
-    'footer.tagline': 'Food festivals and a new experience of city life',
+    'footer.tagline': 'Festival, Music, Food and Amazing Experiences.',
     'footer.rights': 'All rights reserved',
     'footer.info': 'Information',
     'footer.legal': 'Legal notice',
